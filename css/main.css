@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.main {
+  position: relative;
+  width: 1080px;
+  height: 660px;
+  background-image: url("../img/bgc.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+@font-face{
+font-family:"myCust";
+src:url('../font/NotoSansSC-Medium.ttf')
+}

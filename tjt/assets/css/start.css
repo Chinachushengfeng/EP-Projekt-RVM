@@ -1,0 +1,189 @@
+@import url("./var.css");
+@import url("./circle.css");
+.content {
+  margin-left: 58px;
+  display: flex;
+  flex-direction: column;
+}
+.content .content-head {
+  margin-bottom: 53px;
+}
+
+.main .circle-one {
+  top: -80px;
+  left: -115px;
+}
+
+.page .title::after {
+  letter-spacing: 0.5px;
+  content: "Mit dem Recycling starten";
+}
+
+.content-body {
+  display: flex;
+  flex-direction: row;
+}
+.content-body .content-body-left {
+  width: 450px;
+  height: 465px;
+  padding: 24px 8px 8px 8px;
+  background-color: var(--content-body-left-bg-color);
+  box-shadow: 0px 2px 6px 2px var(--left-box-shadow);
+  border-radius: 28px;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  -o-border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 63px;
+}
+.content-body-left-top {
+  position: relative;
+  height: 327px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bottle {
+  position: absolute;
+  left: 0px;
+  height: 230px;
+  bottom: 0;
+}
+.can {
+  position: absolute;
+  height: 140px;
+  left: 120px;
+  bottom: 0;
+}
+.glass {
+  position: absolute;
+  height: 280px;
+  left: 150px;
+  bottom: 0;
+}
+.uncan {
+  position: absolute;
+  width: 138px;
+  left: 150px;
+  top: 96px;
+  bottom: 0;
+}
+
+.content-body-left-bottom {
+  width: 434px;
+  height: 108px;
+  margin: 0 auto;
+  border-radius: 28px;
+  background-color: var(--content-body-left-bottom-bg-color);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  -o-border-radius: 28px;
+  padding: 17px 0 0 36px;
+  display: flex;
+  flex-direction: column;
+}
+.content-body-left-bottom .title {
+  font-family: Red Hat Display;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--title-color);
+  margin-bottom: 13px;
+}
+.content-body-left-bottom .title::after {
+  content: "Was können Sie recyclen?";
+}
+.content-body-left-bottom .Bcontent {
+  font-family: Red Hat Display;
+  font-size: 14px;
+  color: var(--contenc-color);
+}
+
+.content-body-right {
+  height: 465px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content-body-right-top {
+  width: 450px;
+  height: 350px;
+  border-radius: 28px;
+  background-color: var(--content-body-right-bg-color);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  -o-border-radius: 28px;
+  padding: 0px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+}
+.top-example {
+  position: relative;
+  height: 234px;
+  padding: 0 0 0 16px;
+  display: flex;
+  flex-direction: row;
+}
+.top-example .richTooltip {
+  margin-top: 16px;
+}
+.content-body-right-bottom {
+  width: 450px;
+  height: 72px;
+  border-radius: 100px;
+  opacity: 0px;
+  background-color: var(--right-bottom-color);
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  box-shadow: 0px 0px 16px 0px var(--right-bottom-box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Red Hat Display;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: var(--bottom-content-color);
+}
+
+.content-body-right-bottom img {
+  margin-left: 8px;
+}
+.top-explain {
+  width: 434px;
+  height: 108px;
+  margin: 0 auto;
+  border-radius: 28px;
+  background-color: var(--pfanda-light-blue);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  -o-border-radius: 28px;
+  padding: 17px 0 0 36px;
+  display: flex;
+  flex-direction: column;
+}
+.top-explain .title {
+  font-family: Red Hat Display;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--title-color);
+  margin-bottom: 13px;
+}
+.top-explain .title::after {
+  content: "Was nehmen wir nicht entgegen?";
+}
+.top-explain .Bcontent {
+  font-family: Red Hat Display;
+  font-size: 14px;
+  color: var(--contenc-color);
+}

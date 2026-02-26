@@ -1,0 +1,124 @@
+body {
+	margin-left: 110px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color:#000;
+	color:#FFF;
+}
+ 
+
+.ziti{
+ 
+    border-radius:  100%;
+margin-left:-40%;
+margin-top:0px;
+
+	}
+	
+.jiafen{
+	
+	margin-left:10%;
+	width:10%;
+	hight:50%;
+	
+	
+	}
+.ziti1{ 
+	font-size:16px;
+ color:#60FF88;
+ 
+	}
+
+ .ziti3{
+	color:#FF6;
+	font-size:16px;
+	 
+	}
+
+.loader {
+    width:30em;
+    height: 30em;
+    font-size: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader .face {
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+    animation: animate 3s linear infinite;
+ 
+}
+
+.loader .face:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    color: blue;
+    border-color: currentColor transparent transparent currentColor;
+    border-width: 0.2em 0.2em 0em 0em;
+    --deg: -45deg;
+
+margin-left:-20%;
+    animation-direction: normal;
+}
+
+.loader .face:nth-child(2) {
+    width: 100%;
+    height: 100%;
+    color: lime; 
+    border-color: currentColor currentColor transparent transparent;
+    border-width: 0.2em 0em 0em 0.2em;
+    --deg: -135deg;
+    animation-direction: reverse;
+	
+margin-left:-20%;
+}
+
+.loader .face .circle {
+    position: absolute;
+    width: 50%;
+    height: 0.1em;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform: rotate(var(--deg));
+    transform-origin: left;
+	 content: ' 2121';
+
+}
+
+.loader .face .circle::before {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    content: ' ';
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    border-radius: 50%;
+  
+}
+
+.content {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    content: ' ';
+    width: 1em;
+    height: 1em;
+    color:#F00 ;
+	}
+
+
+@keyframes animate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+

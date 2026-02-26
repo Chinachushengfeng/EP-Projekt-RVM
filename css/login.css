@@ -1,0 +1,58 @@
+.step {
+  position: absolute;
+  top: 145px;
+  left: 34px;
+  width: 424px;
+  height: 374px;
+  background-image: url("../img/login-step.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.scan {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  right: 10px;
+  width: 454px;
+  height: 590px;
+  background-image: url("../img/login-scan.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.footer {
+  position: absolute;
+  width: 720px;
+  height: 55px;
+  bottom: 30px;
+  left: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.backBtn {
+  width: 210px;
+  height: 55px;
+  background-color: #2caac9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+}
+.continueBtn {
+  width: 292px;
+  height: 55px;
+  background-color: #2caac9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+}

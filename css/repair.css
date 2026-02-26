@@ -1,0 +1,175 @@
+.content {
+  width: 660px;
+  height: 340px;
+  margin-top: 177px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content_left {
+  width: 244px;
+  height: 353px;
+  background-image: url("../img/repair_img.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.content_right {
+  position: relative;
+  width: 327px;
+  height: 327px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_right_time {
+  z-index: 3;
+  font-size: 100px;
+  font-weight: 800;
+}
+.footer {
+  position: absolute;
+  width: 402px;
+  height: 61px;
+  bottom: 24px;
+  left: 339px;
+  background-image: url("../img/repair_tips.png");
+}
+
+.circle_color {
+  z-index: 1;
+  position: absolute;
+  width: 325px;
+  height: 325px;
+  border-radius: 325px;
+  /*background: conic-gradient(    rgba(44, 170, 201, 100%) 0deg 45deg,    rgba(44, 170, 201, 90%) 45deg 90deg,    rgba(44, 170, 201, 80%) 90deg 135deg,    rgba(44, 170, 201, 70%) 135deg 180deg,    rgba(44, 170, 201, 60%) 180deg 225deg,    rgba(44, 170, 201, 50%) 225deg 270deg,    rgba(44, 170, 201, 40%) 270deg 315deg,    rgba(44, 170, 201, 30%) 315deg 360deg  );
+  */
+  background: conic-gradient(rgba(44, 170, 201, 100%), #fff);
+  animation: circler 1.5s linear infinite;
+  -webkit-animation: circler 1.5s linear infinite;
+}
+@keyframes circler {
+  from {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+}
+@keyframes circleRotate {
+  0% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 90%) 0deg 45deg,
+      rgba(44, 170, 201, 80%) 45deg 90deg,
+      rgba(44, 170, 201, 70%) 90deg 135deg,
+      rgba(44, 170, 201, 60%) 135deg 180deg,
+      rgba(44, 170, 201, 50%) 180deg 225deg,
+      rgba(44, 170, 201, 40%) 225deg 270deg,
+      rgba(44, 170, 201, 30%) 270deg 315deg,
+      rgba(44, 170, 201, 100%) 315deg 360deg
+    );
+  }
+  25% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 80%) 0deg 45deg,
+      rgba(44, 170, 201, 70%) 45deg 90deg,
+      rgba(44, 170, 201, 60%) 90deg 135deg,
+      rgba(44, 170, 201, 50%) 135deg 180deg,
+      rgba(44, 170, 201, 40%) 180deg 225deg,
+      rgba(44, 170, 201, 30%) 225deg 270deg,
+      rgba(44, 170, 201, 100%) 270deg 315deg,
+      rgba(44, 170, 201, 90%) 315deg 360deg
+    );
+  }
+  37.5% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 70%) 0deg 45deg,
+      rgba(44, 170, 201, 60%) 45deg 90deg,
+      rgba(44, 170, 201, 50%) 90deg 135deg,
+      rgba(44, 170, 201, 40%) 135deg 180deg,
+      rgba(44, 170, 201, 30%) 180deg 225deg,
+      rgba(44, 170, 201, 100%) 225deg 270deg,
+      rgba(44, 170, 201, 90%) 270deg 315deg,
+      rgba(44, 170, 201, 80%) 315deg 360deg
+    );
+  }
+  50% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 60%) 0deg 45deg,
+      rgba(44, 170, 201, 50%) 45deg 90deg,
+      rgba(44, 170, 201, 40%) 90deg 135deg,
+      rgba(44, 170, 201, 30%) 135deg 180deg,
+      rgba(44, 170, 201, 100%) 180deg 225deg,
+      rgba(44, 170, 201, 90%) 225deg 270deg,
+      rgba(44, 170, 201, 80%) 270deg 315deg,
+      rgba(44, 170, 201, 70%) 315deg 360deg
+    );
+  }
+  62.5% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 50%) 0deg 45deg,
+      rgba(44, 170, 201, 40%) 45deg 90deg,
+      rgba(44, 170, 201, 30%) 90deg 135deg,
+      rgba(44, 170, 201, 100%) 135deg 180deg,
+      rgba(44, 170, 201, 90%) 180deg 225deg,
+      rgba(44, 170, 201, 80%) 225deg 270deg,
+      rgba(44, 170, 201, 70%) 270deg 315deg,
+      rgba(44, 170, 201, 60%) 315deg 360deg
+    );
+  }
+  75% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 40%) 0deg 45deg,
+      rgba(44, 170, 201, 30%) 45deg 90deg,
+      rgba(44, 170, 201, 100%) 90deg 135deg,
+      rgba(44, 170, 201, 90%) 135deg 180deg,
+      rgba(44, 170, 201, 80%) 180deg 225deg,
+      rgba(44, 170, 201, 70%) 225deg 270deg,
+      rgba(44, 170, 201, 60%) 270deg 315deg,
+      rgba(44, 170, 201, 50%) 315deg 360deg
+    );
+  }
+  87.5% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 30%) 0deg 45deg,
+      rgba(44, 170, 201, 100%) 45deg 90deg,
+      rgba(44, 170, 201, 90%) 90deg 135deg,
+      rgba(44, 170, 201, 80%) 135deg 180deg,
+      rgba(44, 170, 201, 70%) 180deg 225deg,
+      rgba(44, 170, 201, 60%) 225deg 270deg,
+      rgba(44, 170, 201, 50%) 270deg 315deg,
+      rgba(44, 170, 201, 40%) 315deg 360deg
+    );
+  }
+  100% {
+    background: conic-gradient(
+      rgba(44, 170, 201, 100%) 0deg 45deg,
+      rgba(44, 170, 201, 90%) 45deg 90deg,
+      rgba(44, 170, 201, 80%) 90deg 135deg,
+      rgba(44, 170, 201, 70%) 135deg 180deg,
+      rgba(44, 170, 201, 60%) 180deg 225deg,
+      rgba(44, 170, 201, 50%) 225deg 270deg,
+      rgba(44, 170, 201, 40%) 270deg 315deg,
+      rgba(44, 170, 201, 30%) 315deg 360deg
+    );
+  }
+}
+.content_right_circle {
+  z-index: 2;
+  position: absolute;
+  width: 327px;
+  height: 327px;
+  background-image: url("../img/repair_circle.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

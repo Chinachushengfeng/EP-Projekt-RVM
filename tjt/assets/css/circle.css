@@ -1,0 +1,65 @@
+@import url("./var.css");
+.circle-one {
+  z-index: 1;
+  position: absolute;
+  width: 1080px;
+  height: 1080px;
+  border-radius: 19px;
+  background: var(--one-circle-color);
+  -webkit-border-radius: 799px;
+  -moz-border-radius: 799px;
+  -ms-border-radius: 799px;
+  -o-border-radius: 799px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.circle-two {
+  width: 543px;
+  height: 543px;
+  border-radius: 543px;
+  background-color: var(--two-circle-color);
+  -webkit-border-radius: 543px;
+  -moz-border-radius: 543px;
+  -ms-border-radius: 543px;
+  -o-border-radius: 543px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.circle-three {
+  width: 299px;
+  height: 299px;
+  border-radius: 299px;
+  background-color: var(--three-circle-color);
+  -webkit-border-radius: 299px;
+  -moz-border-radius: 299px;
+  -ms-border-radius: 299px;
+  -o-border-radius: 299px;
+}
+.pageCircle-one {
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  background-color: var(--pageCircle-one-color);
+  -webkit-border-radius: 48px;
+  -moz-border-radius: 48px;
+  -ms-border-radius: 48px;
+  -o-border-radius: 48px;
+  box-shadow: 0px 0px 0px 8px var(--pageCircle-one-color-shadow);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.pageCircle-one p {
+  font-family: Red Hat Display;
+  font-weight: bold;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 16px;
+  color: var(--pageCircle-one-p-color);
+}

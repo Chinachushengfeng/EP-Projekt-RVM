@@ -1,0 +1,4 @@
+.btn-pane{padding: 250px 0 0 0;width: 100%;height: 100%;}
+.btn-line{margin: 10px 20px 0 20px;margin-left:-10px;padding: 10px 0 10px 0;border-radius:35px;border:1px  dashed green;}
+button{padding: 20px 0 20px 0;margin: 0 7px 0 7px;font-size:3vw;width: 240px;background:#2f9ebb;border-radius: 1.5vw;color: #fff;}
+.btn-gray{background:#aaa;} 

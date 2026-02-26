@@ -1,0 +1,78 @@
+@import url("./var.css");
+@import url("./circle.css");
+.main .cricle-one {
+  top: -80px;
+  left: 140px;
+}
+
+.center {
+  margin-top: 158px;
+  margin-left: 270px;
+  height: 306px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+.center > .logo img {
+  height: 72px;
+  width: 207.61px;
+  margin-bottom: 30px;
+}
+.center .context {
+  width: 539px;
+  height: 120px;
+  top: 260px;
+  left: 271px;
+  opacity: 0px;
+  font-family: Red Hat Display-medium;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+.center .btn {
+  width: 240px;
+  height: 56px;
+  top: 410px;
+  left: 420px;
+  border-radius: 12px 12px 12px 12px;
+  opacity: 0px;
+  background: #b8e158;
+  box-shadow: 0px 4px 16px 0px #70f46173;
+  -webkit-border-radius: 12px 12px 12px 12px;
+  -moz-border-radius: 12px 12px 12px 12px;
+  -ms-border-radius: 12px 12px 12px 12px;
+  -o-border-radius: 12px 12px 12px 12px;
+}
+.btn .btnContent {
+  height: 56px;
+  opacity: 0px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.btnContent img {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+.btnContent p {
+  /* width: 105px; */
+  height: 20px;
+  opacity: 0px;
+  font-size: 18px;
+  font-family: roboto-medium;
+  line-height: 20px;
+  text-align: left;
+  color: var(--button-content-color);
+}

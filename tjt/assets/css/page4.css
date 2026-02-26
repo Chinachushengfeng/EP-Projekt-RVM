@@ -1,0 +1,213 @@
+@import url("./var.css");
+@import url("./circle.css");
+.content {
+  margin-left: 58px;
+  display: flex;
+  flex-direction: column;
+}
+.main .cricle-one {
+  top: -80px;
+  left: -115px;
+}
+.page .title::after {
+  content: "Dziękujemy, nieźle Ci poszło!";
+}
+.content-head {
+  margin-bottom: 53px;
+}
+.content-body {
+  display: flex;
+  flex-direction: column;
+}
+.content-body-main {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 43px;
+}
+.bottle {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  border-radius: 28px;
+  background-color: var(--table-img-bg-color);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  -o-border-radius: 28px;
+  box-shadow: 0px 1px 2px 0px var(--table-img-shadow-color);
+  margin-right: 31px;
+}
+.bottle > img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+}
+.bottle .richTooltip {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.can {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background-color: var(--table-img-bg-color);
+  border-radius: 28px;
+  background-color: var(--table-img-bg-color);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  -o-border-radius: 28px;
+  box-shadow: 0px 1px 2px 0px var(--table-img-shadow-color);
+  margin-right: 31px;
+}
+.can .richTooltip {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.can > img {
+  position: absolute;
+  width: 174px;
+  height: 174px;
+  bottom: 100px;
+}
+.img-c-d {
+  padding: 0 7px 8px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+}
+.count {
+  width: 284px;
+  height: 92px;
+  border-radius: 24px;
+  padding: 8px;
+  background: var(--count-bg-color);
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  -ms-border-radius: 24px;
+  -o-border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Red Hat Display;
+}
+.count > span {
+  font-size: 16px;
+  color: var(--count-num-name-color);
+  margin-left: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 22px;
+}
+.count > .number {
+  width: 96px;
+  height: 76px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  background-color: var(--count-num-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--count-num-color1);
+}
+.table {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 26px 0;
+}
+.re {
+  width: 308px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.re p {
+  font-family: Red Hat Display;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: var(--table-tag-color);
+}
+.re > span {
+  font-family: Red Hat Display;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 64px;
+  letter-spacing: -0.25px;
+}
+.re:first-child > span {
+  color: var(--count-num-color1);
+}
+.re:last-child span {
+  color: var(--count-num-color2);
+}
+.content-body-bottom {
+  display: flex;
+  flex-direction: row;
+}
+.tips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 110px;
+}
+.tips > p {
+  font-family: Red Hat Display;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  color: var(--tips-color);
+  margin-left: 16px;
+}
+.tips > img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background-color: rgba(38, 153, 255, 1);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.btn {
+  width: 450px;
+  height: 72px;
+  background-color: var(--content-body-right-bg-color);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  box-shadow: 0px 4px 16px 0px var(--right-bottom-box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Red Hat Display;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  color: var(--bottom-content-color);
+}
+.btn img {
+  margin-left: 8px;
+}
