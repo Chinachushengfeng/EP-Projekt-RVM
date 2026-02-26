@@ -282,7 +282,84 @@ $bottlevalue=number_format($bottlevalue,2);
 	 
 	  
 }  
+     
+
+
+
+elseif ($command==44   )    //欺诈
+	
+	{
+		   
+		  	 
+ set_time_limit(1000000);//无限请求超时时间    
+$i=0;    
+while (true){    
+    //sleep(1);    
+    usleep(1000000);//0.5秿   
+    $i++;    
+        
       
+	  
+	  
+	  
+	  
+			 
+	$sql="select count(id) as totalcheat from user_transaction where transactionid='$transactionid'and recognitionstatus=44";
+$totalcheat=  mysqli_query($link,$sql);
+$totalcheat=mysqli_fetch_array($totalcheat);
+$totalcheat=$totalcheat['totalcheat'];		 
+
+
+
+
+
+
+if ($totalcheat<1)
+{	
+	  
+        $arr=array('success'=>"44",'num'=>'0','value'=>$barcode);    
+        echo json_encode($arr);    
+}
+
+else
+{
+	 
+		  
+        $arr=array('success'=>"55",'num'=>'0','value'=>$barcode);     //2次欺诈
+        echo json_encode($arr);    
+	
+	
+}	
+
+ 
+ 	    
+       $sql="insert into user_transaction  (user,transactionid,dateline,statecode,barcode,weight,bors,diam,recognitionstatus,charityid,rebateordonate,bottlevalue,payplatform,charityname,octreceipt)
+  
+  values ('$user','$transactionid','$dateline','$statecode','$barcode','$weight','$bors','$diam','44','$charityid','$rebateordonate','$bottlevalue','$payplatform','$charityname','$octreceipt')";
+  
+  
+  //echo  $transactionid,$dateline,$statecode,$user,$barcode,$brand,$bottleinfo,$weight,$recognitionstatus,$rebateordonate,$bottlevalue;
+ 
+
+			mysqli_query($link,$sql);	 
+ $sql="update command set recognitionstatus=0 ,diam=0,weight=0";
+ mysqli_query($link,$sql);	 
+ 
+ 
+ 
+       exit();  
+
+
+
+		} 
+			  
+	 
+	 
+	  
+} 
+
+
+
         
 	//1开门成功 2到位成功  3:没扫描到 4条码不符 5超重 6过轻 7回收成功 8回收失败 9退瓶成功 10关门成功 11机内有瓶子 12图像识别失败
  

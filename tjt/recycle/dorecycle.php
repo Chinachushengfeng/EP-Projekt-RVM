@@ -728,7 +728,20 @@ $(function () {
 				}
   
  
+ 		 else if (data.success == "44") {
+
  
+ setTimeout("javascript:location.href='cheating.php'", 1000); 
+
+
+ 						}
+						
+						else if (data.success == "55") {
+
+ 
+setTimeout("javascript:location.href='cheatingend.php'", 1000); 
+
+ 						}
  
 
 
