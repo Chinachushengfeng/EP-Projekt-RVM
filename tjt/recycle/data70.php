@@ -181,7 +181,7 @@ $transactiondone='0';
  //1开门成功 2到位成功  3:没扫描到 4条码不符 5超重 6过轻 7回收成功 8回收失败 9退瓶成功 10关门成功 11机内有瓶子 12图像识别失败
  
 
-    if ($command==7 )   //&& $cishu<10  //success
+    if ($command==70 )   //&& $cishu<10  //success
 	
 	{
 		  
