@@ -66,6 +66,19 @@ error_reporting(0);
 
  
  
+        $sql = "SELECT COUNT(id) AS restcount FROM printer_barcode";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_array($result);
+        $rest_count = $row['restcount'];
+        
+        if($rest_count < 2) {
+         
+		 
+	        
+	  	  Header("Location:barcode_suspend.php");   
+		  
+	   }
+ 
  
 
 function mysqltorepair($mytable)
