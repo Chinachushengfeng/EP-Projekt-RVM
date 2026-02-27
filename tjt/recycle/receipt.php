@@ -117,31 +117,25 @@ include("IncDB.php");
 include("function/sql.php");
  
 	  
-		 	  $sql="update command set  recognitionstatus='0'";
-			 mysqli_query($link,$sql);	 
-			 
+$sql="update command set  recognitionstatus='0'";
+mysqli_query($link,$sql);	 
+
+
+$bottle= select('command','bottle');
+$can= select('command','can');
+
+
 
  
+  
+$sql="update user_transaction set  transactiondone=4  where transactionid='$transactionid'";//標記結束transaction 4=crusher问题   //每次在載入首頁時候會檢查是否有0標記並上傳。
+mysqli_query($link,$sql);
+
+  
 $transactionid= select('command','transactionid');
 
-$sql="select count(transactionid) as bottleQty from user_transaction where transactionid='$transactionid' and  metal='0' and recognitionstatus=1 and print_barcode='0'";
-$bottleQty=  mysqli_query($link,$sql);
-$bottleQty=mysqli_fetch_array($bottleQty);
-$bottleQty=$bottleQty['bottleQty'];		
- 
-
- 
-
-$sql="select count(transactionid) as canQty from user_transaction where transactionid='$transactionid' and  metal='1' and recognitionstatus=1 and print_barcode='0'";
-$canQty=  mysqli_query($link,$sql);
-$canQty=mysqli_fetch_array($canQty);
-$canQty=$canQty['canQty'];		
  
  
- 
- 
- 
-	
 	
 	  
 $sql="update user_transaction set  transactiondone=2  where transactionid='$transactionid'";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
@@ -150,8 +144,7 @@ mysqli_query($link,$sql);
 
 
 
-
- if ($canQty+$bottleQty>0)
+ if (($can+$bottle )>0) 
  {
 	 
 	  
