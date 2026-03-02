@@ -511,20 +511,17 @@ include('incdb.php');
 date_default_timezone_set("PRC");
 
 $sql = "SELECT 
-           print_barcode,
-           dateline,
-           transactionid,
-           recognitionstatus,
-           ut.id,
-           (SELECT COUNT(*) 
-            FROM user_transaction ut2 
-            WHERE ut2.print_barcode = ut.print_barcode 
-            AND ut2.recognitionstatus = 1) as record_count
-        FROM user_transaction ut
-        WHERE ut.recognitionstatus = 1
-        GROUP BY ut.print_barcode
-        ORDER BY ut.id DESC
-        LIMIT 100";
+    ut.print_barcode,
+    ut.dateline,
+    ut.transactionid,
+    ut.recognitionstatus,
+    ut.id,
+    COUNT(*) as record_count  -- 直接使用COUNT
+FROM user_transaction ut
+WHERE ut.recognitionstatus = 1
+GROUP BY ut.print_barcode
+ORDER BY MAX(ut.id) DESC  -- 使用MAX来排序
+LIMIT 100";
 
 $result = mysqli_query($link, $sql);
 $data = [];
