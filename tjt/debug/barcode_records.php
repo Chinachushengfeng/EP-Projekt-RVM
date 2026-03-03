@@ -461,6 +461,21 @@
                 </div>
             </div>
         </header>
+         <a href="../index.php" class="back-link">
+		   <h3 style='margin-right:800px;   display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: #cdd2d8 ;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+			
+			'>  <-Powrót</h1> </a>
+		
+        
         
         <div class="content">
             <div class="info-box">
