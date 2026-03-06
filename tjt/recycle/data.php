@@ -333,17 +333,11 @@ else
 
  
  	    
-       $sql="insert into user_transaction  (user,transactionid,dateline,statecode,barcode,weight,bors,diam,recognitionstatus,charityid,rebateordonate,bottlevalue,payplatform,charityname,octreceipt)
+$sql="UPDATE user_transaction  SET recognitionstatus = '44'   ORDER BY id DESC  LIMIT 1;" ;
   
-  values ('$user','$transactionid','$dateline','$statecode','$barcode','$weight','$bors','$diam','44','$charityid','$rebateordonate','$bottlevalue','$payplatform','$charityname','$octreceipt')";
-  
-  
-  //echo  $transactionid,$dateline,$statecode,$user,$barcode,$brand,$bottleinfo,$weight,$recognitionstatus,$rebateordonate,$bottlevalue;
- 
-
-			mysqli_query($link,$sql);	 
- $sql="update command set recognitionstatus=0 ,diam=0,weight=0";
- mysqli_query($link,$sql);	 
+mysqli_query($link,$sql);	 
+$sql="update command set recognitionstatus=0 ,diam=0,weight=0";
+mysqli_query($link,$sql);	 
  
  
  
