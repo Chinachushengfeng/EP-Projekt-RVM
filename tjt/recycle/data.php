@@ -248,8 +248,27 @@ $bottlevalue=$bottlevalue*0.01;
 
 $bottlevalue=number_format($bottlevalue,2);
  
+ 
+ 
+ 
+ 
+ if ($metal==0)
+ {
 	$sql = "update command set bottle=bottle+1,pet_value=pet_value+'$bottlevalue',metal=0"; 
 		mysqli_query($link, $sql);
+ }
+ else
+ {
+	 	$sql = "update command set can=can+1,can_value=can_value+'$bottlevalue',metal=1"; 
+		mysqli_query($link, $sql);
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
   
  
