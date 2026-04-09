@@ -534,7 +534,7 @@ $sql = "SELECT
     COUNT(*) as record_count  -- 直接使用COUNT
 FROM user_transaction ut
 WHERE ut.recognitionstatus = 1
-GROUP BY ut.print_barcode
+GROUP BY ut.transactionid
 ORDER BY MAX(ut.id) DESC  -- 使用MAX来排序
 LIMIT 100";
 

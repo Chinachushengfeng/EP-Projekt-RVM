@@ -55,7 +55,7 @@ mysqli_query($link,$sql);
 		}
 	 
  $arr=array('success'=>'undone');    
-    echo json_encode($arr); 
+    echo json_encode($arr);  
 		
 
 		
@@ -352,7 +352,7 @@ else
 
  
  	    
-$sql="UPDATE user_transaction  SET recognitionstatus = '44'   ORDER BY id DESC  LIMIT 1;" ;
+$sql="UPDATE user_transaction  SET recognitionstatus = '44'   ORDER BY id DESC  LIMIT 1" ;
   
 mysqli_query($link,$sql);	 
 $sql="update command set recognitionstatus=0 ,diam=0,weight=0";
