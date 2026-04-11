@@ -125,12 +125,58 @@ $bottle= select('command','bottle');
 $can= select('command','can');
 
 
+$sql="SELECT count(id) as bottleQTY from user_transaction where recognitionstatus=1 and metal=0 and transactionid='$transactionid'";
+ $bottleQTY=  mysqli_query($link,$sql);
+ $bottleQTY=mysqli_fetch_array($bottleQTY);
+ $bottleQTY=$bottleQTY['bottleQTY'];	
+ 
+ 
+			 
+	$sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='0' and recognitionstatus=1";
+$totalBvalue=  mysqli_query($link,$sql);
+$totalBvalue=mysqli_fetch_array($totalvalue);
+$totalBvalue=$totalvalue['totalvalue'];		 
+			 
+
+
+
+  
+$sql="update command set  bottle='$bottleQTY' ,pet_value= '$totalBvalue' ";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
+mysqli_query($link,$sql);
+ 
+
 
  
-  
-$sql="update user_transaction set  transactiondone=4  where transactionid='$transactionid'";//標記結束transaction 4=crusher问题   //每次在載入首頁時候會檢查是否有0標記並上傳。
-mysqli_query($link,$sql);
 
+
+
+
+
+
+ 
+$sql="SELECT count(id) as canQTY from user_transaction where recognitionstatus=1 and metal=1 and transactionid='$transactionid'";
+ $canQTY=  mysqli_query($link,$sql);
+ $canQTY=mysqli_fetch_array($canQTY);
+ $canQTY=$canQTY['canQTY'];	
+
+ 			 
+	$sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='1' and recognitionstatus=1";
+$totalcvalue=  mysqli_query($link,$sql);
+$totalcvalue=mysqli_fetch_array($totalvalue);
+$totalcvalue=$totalvalue['totalvalue'];		 
+			 
+
+
+ 
+   
+$sql="update command set  can='$canQTY' ,can_value='$totalcvalue";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
+mysqli_query($link,$sql);
+ 
+ 
+
+
+
+ 
   
 $transactionid= select('command','transactionid');
 
@@ -144,7 +190,8 @@ mysqli_query($link,$sql);
 
 
 
- if (($can+$bottle )>0) 
+
+ if (($canQTY+$bottleQTY )>0) 
  {
 	 
 	  
@@ -200,6 +247,13 @@ $userscan= select("command","userscan");
 $can= select("command","can");
 $bottle= select("command","bottle");
 $value= select("command","can_value")+select("command","pet_value");
+
+
+
+
+
+
+
 if($comresult==11111)
 {
     header("Location:../index.php"); 
@@ -261,14 +315,7 @@ if($comresult==11111)
 
 
 
-
-
-
-
-
-
-
-
+ 
 
 				<tr>
 				

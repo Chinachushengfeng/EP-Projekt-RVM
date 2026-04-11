@@ -3,7 +3,7 @@
 
 <head>
 
-  <meta http-equiv="refresh" content="1;url=http://127.0.0.1/tjt/recycle/thanks.php" />
+  <meta http-equiv="refresh" content="1;url=http://127.0.0.1/tjt/recycle/receipt.php" />
    
  	<script src="js/jquery-1.9.1.min.js"></script>
 
