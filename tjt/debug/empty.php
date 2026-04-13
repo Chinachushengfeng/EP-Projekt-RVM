@@ -206,7 +206,8 @@
 		
     </style>
 </head>
-<body>
+ <body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
+ 
 <?php 
 
 include("IncDB.php");
