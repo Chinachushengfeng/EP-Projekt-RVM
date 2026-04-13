@@ -89,7 +89,9 @@ body::after {
 
 </head>
 
- <body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
+ 
+ 
+  <body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
 
   
     
@@ -99,6 +101,8 @@ document.addEventListener('selectstart', e => e.preventDefault()); // 禁止选�
 document.addEventListener('dragstart', e => e.preventDefault());   // 禁止拖动
 </script>
     
+	
+	
 <?php 
  
 error_reporting(0); 
@@ -124,6 +128,7 @@ mysqli_query($link,$sql);
 $bottle= select('command','bottle');
 $can= select('command','can');
 
+$transactionid= select('command','transactionid');
 
 $sql="SELECT count(id) as bottleQTY from user_transaction where recognitionstatus=1 and metal=0 and transactionid='$transactionid'";
  $bottleQTY=  mysqli_query($link,$sql);
@@ -134,13 +139,12 @@ $sql="SELECT count(id) as bottleQTY from user_transaction where recognitionstatu
 			 
 	$sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='0' and recognitionstatus=1";
 $totalBvalue=  mysqli_query($link,$sql);
-$totalBvalue=mysqli_fetch_array($totalvalue);
-$totalBvalue=$totalvalue['totalvalue'];		 
-			 
+$totalBvalue=mysqli_fetch_array($totalBvalue);
+ 
+ 
+$totalBvalue=$totalBvalue['totalvalue'];	 
 
-
-
-  
+ 
 $sql="update command set  bottle='$bottleQTY' ,pet_value= '$totalBvalue' ";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
 mysqli_query($link,$sql);
  
@@ -162,8 +166,8 @@ $canQTY=$canQTY['canQTY'];
  			 
 $sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='1' and recognitionstatus=1";
 $totalcvalue=  mysqli_query($link,$sql);
-$totalcvalue=mysqli_fetch_array($totalvalue);
-$totalcvalue=$totalvalue['totalvalue'];		 
+$totalcvalue=mysqli_fetch_array($totalcvalue);
+$totalcvalue=$totalcvalue['totalvalue'];		 
 		
 
 
@@ -177,8 +181,7 @@ mysqli_query($link,$sql);
 
 
  
-  
-$transactionid= select('command','transactionid');
+   
 
  
  
@@ -255,7 +258,7 @@ $mid=select("command","mid");
 $userscan= select("command","userscan");
 $can= select("command","can");
 $bottle= select("command","bottle");
-$value= select("command","can_value")+select("command","pet_value");
+$value= select("command","can_value")+select("command","pet_value")*0.01;
 
 
 
@@ -467,7 +470,7 @@ if($comresult==11111)
  
 // 以下方式定時跳轉
  
-setTimeout("javascript:location.href='qshtothanks.php'",  7000); 
+setTimeout("javascript:location.href='qshtothanks.php'",  700110); 
  
 
 

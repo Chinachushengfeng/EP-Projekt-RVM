@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="../../css/end.css">
 </head>
 
-<body>
+
+ <body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
+
+
     <div class="main">
        <img src='../../img/end_smile.png'  style="width:48%;height:65%;margin-top:10%">
     </div>
