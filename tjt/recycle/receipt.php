@@ -155,16 +155,16 @@ mysqli_query($link,$sql);
 
  
 $sql="SELECT count(id) as canQTY from user_transaction where recognitionstatus=1 and metal=1 and transactionid='$transactionid'";
- $canQTY=  mysqli_query($link,$sql);
- $canQTY=mysqli_fetch_array($canQTY);
- $canQTY=$canQTY['canQTY'];	
+$canQTY=  mysqli_query($link,$sql);
+$canQTY=mysqli_fetch_array($canQTY);
+$canQTY=$canQTY['canQTY'];	
 
  			 
-	$sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='1' and recognitionstatus=1";
+$sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='1' and recognitionstatus=1";
 $totalcvalue=  mysqli_query($link,$sql);
 $totalcvalue=mysqli_fetch_array($totalvalue);
 $totalcvalue=$totalvalue['totalvalue'];		 
-			 
+		
 
 
  
@@ -197,7 +197,16 @@ mysqli_query($link,$sql);
 	  
 	 	   $printer_barcode=select("printer_barcode","barcode");
 				  
-				  
+					  
+$printer_barcode = select('printer_barcode', 'barcode');
+
+if (empty($printer_barcode) || $printer_barcode === '0' || $printer_barcode === 0) {
+    $printer_barcode = 'nobarcode';
+}  
+
+
+
+
 		 	  $sql="update command set  printer_barcode='$printer_barcode'";
 			 mysqli_query($link,$sql);	 
 			 

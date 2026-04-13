@@ -71,7 +71,7 @@ error_reporting(0);
         $row = mysqli_fetch_array($result);
         $rest_count = $row['restcount'];
         
-        if($rest_count < 2) {
+        if($rest_count < 5) {
          
 		 
 	        

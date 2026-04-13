@@ -6,6 +6,7 @@
     <title>Zapisy kodów kreskowych kuponów</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -450,7 +451,8 @@
         .barcode-card:nth-child(10) { animation-delay: 1.0s; }
     </style>
 </head>
-<body>
+
+<body> 
     <div class="container">
         <header>
             <div class="logo">
@@ -461,6 +463,7 @@
                 </div>
             </div>
         </header>
+        
          <a href="../debug" class="back-link">
 		   <h3 style='margin-right:800px;   display: inline-flex;
             align-items: center;
@@ -518,7 +521,7 @@ Aktualnie wyświetlanych jest 100 ostatnio wydrukowanych kodów kreskowych.
     </div>
 
     <script>
-        // Pobieranie danych z PHP - tutaj symulujemy dane z bazy danych
+            // Pobieranie danych z PHP - tutaj symulujemy dane z bazy danych
         // W rzeczywistości dane te będą generowane dynamicznie przez PHP
 // 直接将PHP数组转换为JavaScript对象
 const barcodeData = <?php
@@ -531,11 +534,13 @@ $sql = "SELECT
     ut.transactionid,
     ut.recognitionstatus,
     ut.id,
-    COUNT(*) as record_count  -- 直接使用COUNT
+    COUNT(*) as record_count,
+    SUM(CASE WHEN ut.metal = 0 THEN 1 ELSE 0 END) as bottle_count,
+    SUM(CASE WHEN ut.metal = 1 THEN 1 ELSE 0 END) as can_count
 FROM user_transaction ut
 WHERE ut.recognitionstatus = 1
 GROUP BY ut.transactionid
-ORDER BY MAX(ut.id) DESC  -- 使用MAX来排序
+ORDER BY MAX(ut.id) DESC
 LIMIT 100";
 
 $result = mysqli_query($link, $sql);
@@ -586,19 +591,19 @@ echo json_encode($data, JSON_UNESCAPED_UNICODE);
         console.error('无效的数据项:', item);
         return;
     }
-    
-    const formattedBarcode = item.print_barcode ? item.print_barcode.toString().padStart(14, '0') : '';
+     
+	const formattedBarcode = item.print_barcode ? item.print_barcode.toString() : '';
     const cardId = index + 1;
     
-    barcodesHTML += `
-        <div class="barcode-card">
-            <div class="barcode-header">
-                <div class="barcode-number"  >${formatBarcodeDisplay(formattedBarcode)}</div>
-                <div class="barcode-id">#${cardId.toString().padStart(2, '0')}</div>
-            </div>
-            <div class="barcode-image-container">
-                <svg class="barcode-image" id="barcode-${cardId}"></svg>
-            </div>
+barcodesHTML += `
+    <div class="barcode-card">
+        <div class="barcode-header">
+            <div class="barcode-number">${formattedBarcode}</div>  <!-- 直接用，不经过函数 -->
+            <div class="barcode-id">#${cardId}</div>
+        </div>
+        <div class="barcode-image-container">
+            <svg class="barcode-image" id="barcode-${cardId}"></svg>
+        </div>
             <div class="barcode-footer">
                 <div class="barcode-type">
                     <i class="fas fa-chart-bar"></i> Time: ${item.formatted_time || 'Brak daty'}
@@ -607,9 +612,27 @@ echo json_encode($data, JSON_UNESCAPED_UNICODE);
             </div>
             <div class="additional-info" style="margin-top: 10px; font-size: 0.9em;">
                 <div>Numer transakcji: ${item.transactionid || ''}</div> 
-                <div>Pomyślnie odzyskano: ${item.record_count || 0}</div>
+            <div><strong style="font-weight: 700; font-size: 1.1em;">Łączna liczba: ${item.record_count || 0}</strong></div>
+                <div>Butelki (PET): ${item.bottle_count || 0}</div>
+                <div>Puszki: ${item.can_count || 0}</div>
+			
+<div style="text-align: right;">
+  <a href='print_again.php?bottle=${item.bottle_count}&can=${item.can_count}&print_barcode=${item.print_barcode}'>
+    <div type='button' style="display: inline-block; border: 1px solid #4C7D3C; padding: 12px 24px; border-radius: 8px; background: white; color: #4C7D3C; cursor: pointer; font-size: 16px; font-weight: 600; transition: all 0.3s ease;">
+        Drukuj ponownie
+    </div>
+</a>
+</div>
+
+
+
+
+
             </div>
-        </div>`;
+			
+			  </div>
+			  
+			  `;
 });
                 
                 barcodesList.innerHTML = barcodesHTML; 
@@ -618,7 +641,7 @@ echo json_encode($data, JSON_UNESCAPED_UNICODE);
         barcodeData.forEach((item, index) => {
     // 确保获取正确的条码数据
     const barcodeStr = item.print_barcode ? item.print_barcode.toString() : '';
-    const formattedBarcode = barcodeStr.padStart(14, '0');
+    const formattedBarcode = barcodeStr;
     const cardId = index + 1;
     
     // 添加调试信息
@@ -639,7 +662,7 @@ echo json_encode($data, JSON_UNESCAPED_UNICODE);
         fontSize: 18,
         margin: 12,
         background: "transparent",
-        lineColor: "#1a2980"
+        lineColor: "#1b6e44"
     });
 });
             }
