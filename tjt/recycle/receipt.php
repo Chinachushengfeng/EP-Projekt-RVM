@@ -173,7 +173,7 @@ $totalcvalue=$totalcvalue['totalvalue'];
 
  
    
-$sql="update command set  can='$canQTY' ,can_value='$totalcvalue";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
+$sql="update command set  can='$canQTY' ,can_value='$totalcvalue'" ;//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
 mysqli_query($link,$sql);
  
  

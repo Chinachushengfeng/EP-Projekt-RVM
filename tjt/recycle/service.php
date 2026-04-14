@@ -93,8 +93,8 @@ $sql="SELECT count(id) as bottleQTY from user_transaction where recognitionstatu
 			 
 	$sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='0' and recognitionstatus=1";
 $totalBvalue=  mysqli_query($link,$sql);
-$totalBvalue=mysqli_fetch_array($totalvalue);
-$totalBvalue=$totalvalue['totalvalue'];		 
+$totalBvalue=mysqli_fetch_array($totalBvalue);
+$totalBvalue=$totalBvalue['totalvalue'];		 
 			 
 
 
@@ -121,14 +121,14 @@ $canQTY=$canQTY['canQTY'];
  			 
 $sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='1' and recognitionstatus=1";
 $totalcvalue=  mysqli_query($link,$sql);
-$totalcvalue=mysqli_fetch_array($totalvalue);
-$totalcvalue=$totalvalue['totalvalue'];		 
+$totalcvalue=mysqli_fetch_array($totalcvalue);
+$totalcvalue=$totalcvalue['totalvalue'];		 
 		
 
 
  
    
-$sql="update command set  can='$canQTY' ,can_value='$totalcvalue";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
+$sql="update command set  can='$canQTY' ,can_value='$totalcvalue' ";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
 mysqli_query($link,$sql);
  
 
@@ -165,7 +165,7 @@ if (empty($printer_barcode) || $printer_barcode === '0' || $printer_barcode === 
 
 
 
- 	$sql="update command set command = 2  ";
+ 	$sql="update command set command = 2";
  mysqli_query($link,$sql);
 			 
 
