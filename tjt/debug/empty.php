@@ -251,7 +251,7 @@ $sql = "update command set userscan=0";
     <div class="bottom-bar">
         <div class="bottom-text" id="bottomText">Proszę zeskanować kod QR</div>
         <div class="bottom-actions">
-            <button type="reset" class="reset-btn" id="resetBtn">Nastawić</button>
+            <button type="reset" class="reset-btn" id="resetBtn">Reset</button>
             <button type="submit" class="confirm-btn">Zaakceptuj number plomby</button>
         </div>
     </div>
@@ -291,7 +291,7 @@ function openModal(bin) {
 // ✅ 关闭 modal，并停止轮询
 function closeModal() {
     const val = inputField.value.trim() || inputField.placeholder;
-    bottomText.textContent = `${currentBin === 'left' ? 'l' : 'r'} ${val}`;
+    bottomText.textContent = `${currentBin === 'left' ? 'l' : 'r'}${val}`;
     overlay.classList.remove('active');
     stopPolling(); // ← 关闭对话框时停止轮询
 }
