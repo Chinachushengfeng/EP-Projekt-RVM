@@ -470,7 +470,7 @@ if($comresult==11111)
  
 // 以下方式定時跳轉
  
-setTimeout("javascript:location.href='qshtothanks.php'",  700110); 
+setTimeout("javascript:location.href='qshtothanks.php'",  7000); 
  
 
 
