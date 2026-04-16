@@ -549,9 +549,9 @@ $data = [];
 
 while($it = mysqli_fetch_assoc($result)) {
     // 添加格式化后的时间
-    $it['formatted_time'] = date('Y-m-d H:i:s', $it['dateline'] - 25200);
+    $it['formatted_time'] = date('Y-m-d H:i:s', $it['dateline'] - 21600);
     // 添加波兰格式时间
-    $it['polish_time'] = date('d.m.Y H:i:s', $it['dateline'] - 25200);
+    $it['polish_time'] = date('d.m.Y H:i:s', $it['dateline'] - 21600);   
     $data[] = $it;
 }
 
