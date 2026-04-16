@@ -258,7 +258,11 @@ $mid=select("command","mid");
 $userscan= select("command","userscan");
 $can= select("command","can");
 $bottle= select("command","bottle");
-$value= select("command","can_value")+select("command","pet_value")*0.01;
+ 
+$sum = select("command","can_value") + select("command","pet_value");
+$value = $sum / 100;  // 除以1000比乘以0.001更精确
+
+
 
 
 
