@@ -142,7 +142,7 @@ $totalBvalue=  mysqli_query($link,$sql);
 $totalBvalue=mysqli_fetch_array($totalBvalue);
  
  
-$totalBvalue=$totalBvalue['totalvalue'];	 
+$totalBvalue=$totalBvalue['totalvalue']*0.01;	 
 
  
 $sql="update command set  bottle='$bottleQTY' ,pet_value= '$totalBvalue' ";//標記結束transaction    //每次在載入首頁時候會檢查是否有0標記並上傳。
@@ -167,7 +167,7 @@ $canQTY=$canQTY['canQTY'];
 $sql="select sum(bottlevalue) as totalvalue from user_transaction where transactionid='$transactionid'and metal='1' and recognitionstatus=1";
 $totalcvalue=  mysqli_query($link,$sql);
 $totalcvalue=mysqli_fetch_array($totalcvalue);
-$totalcvalue=$totalcvalue['totalvalue'];		 
+$totalcvalue=$totalcvalue['totalvalue']*0.01;		 
 		
 
 
