@@ -260,7 +260,7 @@ $can= select("command","can");
 $bottle= select("command","bottle");
  
 $sum = select("command","can_value") + select("command","pet_value");
-$value = $sum / 100;  // 除以1000比乘以0.001更精确
+$value = $sum ;  // 除以1000比乘以0.001更精确
 
 
 
