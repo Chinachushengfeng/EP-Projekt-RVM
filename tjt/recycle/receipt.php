@@ -256,7 +256,7 @@ $comresult=mysqli_num_rows($comresult);
 $mid=select("command","mid");
  
 $userscan= select("command","userscan");
-$can= select("command","can");
+$can= select("command","can"); 
 $bottle= select("command","bottle");
  
 $sum = select("command","can_value") + select("command","pet_value");
