@@ -687,7 +687,7 @@ $(function () {
 								
 				if (data.metal == "0") {   //是塑料瓶
 					
-					 		
+					 		 maxtime=120;
  							evdata.data.btn.click();
  							document.getElementById("msg3").innerHTML = parseInt(document.getElementById("msg3").innerHTML) - 1;
  						 
@@ -707,7 +707,7 @@ $(function () {
 
 				else if (data.metal == "1")
 				{
-	
+						 maxtime=120;
 								
  						evdata.data.btn.click();
  							document.getElementById("msg3").innerHTML = parseInt(document.getElementById("msg3").innerHTML) - 1;
